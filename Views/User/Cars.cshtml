@@ -1,0 +1,159 @@
+﻿@{
+    Layout = null;
+}
+@using FinalTermProject.Models
+@model List<FinalTermProject.Models.postBo>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cars</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1366px 750px;
+            background-image: url(/Content/muxfi.jpg);
+        }
+
+        #img {
+            background-image: url(/Content/muxfi.jpg);
+            /*height: 210px;*/
+        }
+
+        #bgImg {
+            background-image: url(/Content/muxfi.jpg);
+            opacity: 0.9;
+        }
+    </style>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script>
+    function like(id) {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            var xmlhttp = new XMLHttpRequest();
+        }
+            
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status < 299) {
+                var elem = "count_" + id;
+                var fader = "btn_" + id;
+                $('#'+fader).fadeOut('slow');
+                document.getElementById(elem).innerHTML = xmlhttp.responseText+" Likes";
+                    
+            }
+                
+        }
+        xmlhttp.open("POST", "homeImageLike?id=" + id, true);
+        xmlhttp.send();
+    }
+    
+    </script>
+</head>
+<body>
+    @Html.Partial("~/Views/Helper.cshtml");
+
+    <div>
+        <label class="text-center" style="font-size:70px;font-family:Stencil;color:grey;width:100%;">COLLECTION</label>
+    </div>
+    <br>
+    <div>
+        <div class="col-lg-2">
+            <form action="/User/getSelect" method="post">
+                <h1 style="color:white"> Select Company</h1>
+                <select name="cars">
+                    @foreach (string c in ViewBag.car)
+                    {
+                        <option value=@c.ToString()>@c.ToString()</option>
+
+                    }
+                </select>
+                <input type="submit" />
+            </form>
+        </div>
+
+
+        <div class="col-lg-2">
+            <form action="/User/getPrice" method="post">
+                <h1 style="color:white"> Select Price</h1>
+                <select name="cars">
+
+                    <option value="100000">100000</option>
+                    <option value="150000">150000</option>
+                    <option value="200000">200000</option>
+
+                </select>
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+   
+    <div class="col-lg-10">
+        <div class="row">
+            @foreach (postBo c in Model)
+            {
+                <br />
+                 <br />
+                <div class="col-lg-10">
+                    <div class="header">
+                        <h4><label style="color:white">@c.C.Name</label></h4>
+                    </div>
+                    <div class="img-thumbnail">
+                        <img src="~/Content/car/@c.P.path" data-target="#mymodal-@c.C.Id" data-toggle="modal" class="img-responsive" height="150px" width="300px" />
+                    </div>
+                    <h4><label style="color:white">@c.C.Model</label></h4>
+                    <h4><label style="color:white">@c.C.Company</label></h4>
+                    <h4><label style="color:white">@c.C.Price</label></h4>
+                    <a href="#"><p style="color:wheat" id="count_@c.P.Id">@c.Count Likes<p></a>
+                    <div class="col-lg-8 pull-right">
+                        @if (!c.Youlike)
+                    {
+                            <input type="button" id="btn_@c.P.Id" value="Like" class="btn btn-primary" onclick="like(@c.P.Id)" />
+                    }
+                    </div>
+                        <br />
+                        <br />
+                        <br />
+                    <br />
+                    <br />
+                    </div>
+    <div id="mymodal-@c.C.Id" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="~/Content/car/@c.P.path" class="img-responsive" />
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+            }
+
+                
+
+        </div>
+    </div>
+
+   
+
+</body>
+</html>

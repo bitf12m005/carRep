@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DeleteUser</title>
+</head>
+<body>
+    @Html.Partial("~/Views/PartialHelper.cshtml");
+    <div id="section">
+        <form class=" col-lg-5 form-inline" role="form" style="border-color:aqua chocolate" action="/Admin/DelUser" method="post">
+            <div class="form-group">
+                <label for="id" style="font:1000;font-size:medium;font-family:'Segoe UI';color:white;">User Name:</label>
+                <br />
+                <input type="text" class="form-control col-lg-2" name="name" style="font-size:medium;">
+            </div>
+            <br />
+            <br />
+            <button type="submit" class="btn btn-success col-lg-2" style="font-size:medium;color:black;font-family:'Segoe UI'">GO</button>
+        </form>
+    </div>
+</body>
+</html>

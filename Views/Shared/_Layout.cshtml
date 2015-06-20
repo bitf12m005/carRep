@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+@using FinalTermProject.Models
+@model IEnumerable<string>
+<html>
+<head>
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-image: url(/Content/muxfi.jpg)">
+    <nav class="navbar navbar-inverse" >
+        <div class="container-fluid" >
+            <div class="navbar-header">
+                <a class="navbar-brand active" href="#" style="font-family:'Snap ITC';font-size:35px">CAR INN</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav pull-right" style="font-family:'Snap ITC';font-size:20px">
+                    <li><a href="/User/Index">Home</a></li>
+                    <li><a href="/User/Cars">Cars</a></li>
+                    <li><a href="/User/AboutUs">About Us</a></li>
+                    <li><a href="/User/Contact">Contact</a></li>
+                    <li><a href="/User/getUserCmments">Comments</a></li>
+                    <li><a href="/User/signOut">Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+ <!--   <div id="wowslider-container1" style="background-color:black" >
+        <div class="ws_images" >
+            <ul>
+                <li><img src="data1/images/7.jpg" alt="" height="315" title="" id="wows1_0" /></li>
+                <li><img src="data1/images/8.jpg" alt="" height="315" title="" id="wows1_1" /></li>
+                <li><img src="data1/images/1.jpg" alt="" height="315" title="" id="wows1_2" /></li>
+                <li><img src="data1/images/2.jpg" alt="" height="315" title="" id="wows1_3" /></li>
+                <li><img src="data1/images/3.jpg" alt="" height="315" title="" id="wows1_4" /></li>
+                <li><img src="data1/images/4.jpg" alt="" height="315" title="" id="wows1_5" /></li>
+                <li><a href="http://wowslider.com"><img src="data1/images/5.jpg" height="315" alt="bootstrap carousel" title="" id="wows1_6" /></a></li>
+                <li><img src="data1/images/6.jpg" alt="6" height="315" title="6" id="wows1_7" /></li>
+            </ul>
+   
+        <div class="ws_bullets">
+            <div>
+                <a href="#" title=""><span><img src="data1/tooltips/7.jpg" height="315"  alt="" /></span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/8.jpg" height="315" alt="" /></span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/1.jpg" height="315" alt="" /></span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/2.jpg" height="315" alt="" /></span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/3.jpg" height="315" alt="" /></span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/4.jpg" height="315" alt="" /></span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/5.jpg" height="315" alt="" /></span></a>
+                <a href="#" title=""><span><img src="data1/tooltips/6.jpg" height="315" alt="" /></span></a>
+            </div>
+        </div>
+            </div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">wordpress gallery plugin</a> by WOWSlider.com v7.7</div>
+        <div class="ws_shadow"></div>
+    </div>
+
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    <!-- End WOWSlider.com BODY section -->
+    <div class="container">
+        @RenderBody()
+    </div>
+    
+
+        <footer class="footer bottom" style="position:relative;background-color:black">
+            <div style="text-align: center; color:white" >
+                <p class="list-inline small" style="font-size:13px">Copyright &copy; 2015. Design by  Musfira Khan</p>
+                <p class="list-inline small" style="font-size:13px">BITF12M005</p>
+
+            </div>
+        </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+   
+</body>
+</html>

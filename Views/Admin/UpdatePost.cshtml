@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+  
+}
+@using FinalTermProject.Models
+@model List<FinalTermProject.Models.Car>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdatePost</title>
+</head>
+<body>
+    @Html.Partial("~/Views/PartialHelper.cshtml");
+    <div id="section" class="col-lg-10">
+        @foreach (Car c in Model)
+        {
+            <div>
+                <img src="~/Content/car/@c.picture" height="360" width="360" />
+                <p style="color:white">Name: @c.Name</p>
+                <p style="color:white">Model: @c.Model</p>
+                <p style="color:white">Price: @c.Price</p>
+                <p style="color:white">Company: @c.Company</p>
+            </div>
+
+    <a href="/Admin/updatePostDataTeriMehbani/@c.Id" class="btn btn-primary">Update</a>
+    <a href="/Admin/delete/@c.Id" class="btn btn-danger">Delete</a>
+    <a href="/Admin/changePicture/@c.Id" class="btn btn-danger">Update Picture</a>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+        }
+    </div>
+</body>
+</html>

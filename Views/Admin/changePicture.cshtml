@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "updatePostData";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdatePost</title>
+</head>
+<body>
+
+    @Html.Partial("~/Views/PartialHelper.cshtml");
+    <div id="section" class="col-lg-10">
+        <form action="/Admin/saveprofile" method="post" enctype="multipart/form-data">            
+            
+            <input name="File" type="file" value="Choose Picture" /><br />
+            <br />
+            <input type="submit" />
+        </form>
+    </div>
+
+
+
+
+</body>
+</html>

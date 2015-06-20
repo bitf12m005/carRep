@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <title>Helper</title>
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="~/engine1/style.css" />
+    <script type="text/javascript" src="~/engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body style="background-image: url(/Content/muxfi.jpg)">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand active" href="#" style="font-family:'Snap ITC';font-size:35px">CAR INN</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav pull-right" style="font-family:'Snap ITC';font-size:20px">
+                    <li><a href="~/User/Index">Home</a></li>
+                    <li><a href="~/User/Cars">Cars</a></li>
+                    <li><a href="~/User/AboutUs">About Us</a></li>
+                    <li><a href="~/User/Contact">Contact</a></li>
+                    <li>@Html.ActionLink("Sign Out","Signout","User")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

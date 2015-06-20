@@ -1,0 +1,39 @@
+﻿@using FinalTermProject.Models
+
+
+@{
+    ViewBag.Title = "Comment";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body style=" color: black;background-image:url(/Content/muxfi.jpg)">
+    @* @Html.Partial("~/Views/PartialHelper.cshtml");*@
+    <div>
+        
+        <br /><br />
+        <div class="container well well-sm col-lg-4" style="margin-left:20%;position:relative">
+            <label style="font-size:x-large">UserName:@ViewBag.obj.Username</label><br />
+
+            
+            <br /><label style="text-align:center;font-size:x-large">Comments: </label><br /><br />
+            @foreach (Comment ob in ViewBag.comments)
+            {
+                if (ob.Username == "musfi")
+                {
+                    <p style="font-size:x-large"><strong>Admin</strong>@ob.Comment1</p>
+                }
+                else
+                {
+                    <p style="font-size:x-large"><strong>User @ob.Username</strong>:@ob.Comment1</p>
+                }
+
+            }
+
+            <form action="/Admin/comment" method="post">
+                <input type="text" name="comment" required="" />
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+</body>

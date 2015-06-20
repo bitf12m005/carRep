@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "updatePostDataTeriMehbani";
+    Layout = null;
+}
+
+<h2>updatePostDataTeriMehbani</h2>
+@using FinalTermProject.Models
+@model FinalTermProject.Models.Car
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdatePost</title>
+</head>
+<body>
+
+    @Html.Partial("~/Views/PartialHelper.cshtml");
+    <div id="section" class="col-lg-10">
+
+
+        <form action="/Admin/updateInfo" method="post">
+            <input type="hidden" value=@Model.Id name="Id" style="color:white" />
+            <input type="text" name="Name" value=@Model.Name style="color:white" />
+            <br />
+            <input type="text" name="Company" value=@Model.Company style="color:white" />
+            <br />
+            <input type="text" name="Model" value=@Model.Model style="color:white" />
+            <br />
+            <input type="text" name="Price" value=@Model.Price style="color:white" />
+            <br />
+            <input type="submit" />
+        </form>
+
+
+    </div>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+        
+        
+}
+
+<!DOCTYPE html>
+
+
+<head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <title>DeletePost</title>
+</head>
+<!--<body>
+        <div id="section"><!--yeh jo section hai na yeh index wala hai jo mene uper layout me include karaya hoa
+            <form class=" col-lg-5 form-inline" role="form" style="border-color:aqua chocolate">
+                <div class="form-group">
+                    <label class="col-lg-3" for="id" style="font:1000;font-size:medium;font-family:'Segoe UI';color:black;margin-top:100px">ID:</label>
+                    <input type="text" class="form-control col-lg-2" id="name" style="font-size:medium;margin-left:100px">
+                </div>
+
+                <br />
+                <button type="submit" class="btn btn-default col-lg-2" style="font-size:medium;color:black;font-family:'Segoe UI'">GO</button>
+            </form>
+        </div>
+    
+</body>-->
+
+<body>
+    @Html.Partial("~/Views/PartialHelper.cshtml");
+    <div class="col-lg-4">
+        <form class=" col-lg-5 form-inline" role="form" style="border-color:aqua chocolate">
+            <div class="form-group">
+                <label  for="id" style="font:1000;font-size:medium;font-family:'Segoe UI';color:white;">ID:</label>
+                <input type="text" class="form-control" id="name" style="font-size:medium;">
+            </div>
+            <br />
+            <br />
+            <button type="submit" class="btn btn-success col-lg-2" style="height:50px;width:100px;font-size:medium;color:black;font-family:'Segoe UI'">GO</button>
+        </form>
+
+    </div>
+</body>

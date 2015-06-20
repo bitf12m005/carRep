@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+
+<html>
+
+<body style="background:no-repeat;background-image:url(/Content/Pictures/1.jpg)">
+    <div>
+
+        <label style="font:1000;font-size:70px;font-family:'Snap ITC';color:black;margin-top:100px;margin-left:450px;">CAR INN</label>
+    </div>
+
+    <div>
+        <form action="@Url.Action("LogInAgain", "Home")" class="form-inline" role="form" style="border-color:aqua chocolate;margin-top:150px;margin-left:400px">
+            <div class="form-group">
+                <label style="font:1000;font-size:x-large;font-family:Arial;color:antiquewhite;margin-top:100px">Wrong Username or Password</label>
+                <br />
+                <label for="text" style="font:1000;font-size:x-large;font-family:'Snap ITC';color:antiquewhite;margin-top:100px">User Name:</label>
+                <input type="text" class="form-control" name="Username" style="font-size:x-large;margin-left:50px">
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="pwd" style="font-size:x-large;font:1000;font-family:'Snap ITC';color:antiquewhite;margin-top:100px">Password:</label>
+                <input type="password" class="form-control" name="Password" style="font-size:x-large;margin-left:63px">
+            </div>
+            <br />
+
+
+            <br />
+            <button type="submit" class="btn btn-default" style="font-size:x-large;color:black;font-family:'Snap ITC'">GO</button>
+            <br />
+            <br />
+            <br />
+            <label style="font:1000;font-size:x-large;font-family:'Snap ITC';color:antiquewhite;margin-top:100px">Don't Have Account? </label>
+            <br />
+
+            <a href="/Home/Signup" style="font-size:x-large;color:black;font-family:'Snap ITC'">Sign Up</a>
+        </form>
+    </div>
+    <br />
+    <br />
+    <footer class="navbar-fixed-bottom navbar-inverse">
+        <div style="text-align: center; color:white" class="navbar-inverse">
+            <p class="list-inline small" style="font-size:13px">Copyright &copy; 2015. Design by  Musfira Khan</p>
+            <p class="list-inline small" style="font-size:13px">BITF12M005</p>
+
+        </div>
+    </footer>
+
+</body>
+</html>
